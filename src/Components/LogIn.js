@@ -1,10 +1,12 @@
 import React from 'react'
+import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Image1 from '../Components/Himanshu2.jpeg'
 import './LogIn.css'
 function LogIn() {
     return (
         <div className='container'>
+            <Navbar/>
             <div className='Img'>
                 <img src={Image1} />
             </div>

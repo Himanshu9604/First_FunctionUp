@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 import './About.css'
 import Image2 from '../Components/Himanshu1.jpeg'
 function About() {
   return (
     <div>
+      <Navbar/>
         <div className='Info'>
         <h1>About Us</h1>
         <img src={Image2}/>

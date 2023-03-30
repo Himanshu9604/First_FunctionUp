@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 import Image3 from '../Components/images3.jpg'
 function Register() {
   return (
     <div className= 'container'>
+      <Navbar/>
          <div className='Reg'>
       <form>
         <img src={Image3} />
