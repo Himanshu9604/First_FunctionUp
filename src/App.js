@@ -1,12 +1,12 @@
 import './App.css';
-import Third from './Assignment3/Third';
-
+import First from './Assignment1/First';
 
 function App() {
  
   return (
     <div className="App">
-    <Third/>
+    <First/>
+  
     </div>
   );
 }
