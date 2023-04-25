@@ -1,50 +1,26 @@
-import React from 'react';
+import { useState } from "react";
 
-import { useDispatch, useSelector } from 'react-redux';
-import "./style.css";
-import { useState } from 'react';
-import actions from './actions';
 
-export default function App() {
-  const [task, setTask] = useState('');
-  
-  const todo = useSelector((state) => state);
-  const dispatch = useDispatch();
-  console.log(todo);
-  return (
-    <div className="App">
-      <input value={task} onChange={(e) => setTask(e.target.value)} />
+import Todos from "./todo/Todo";
+import { Provider } from "react-redux";
+import { state, store } from "./todo/TodoSlice";
+import { store1 } from "./Counter/CounterSlice";
+import Counter from "./Counter/Counter";
 
-      <button
-        onClick={() => {
-          dispatch({ type: actions.ADD, payload: task });
 
-          setTask('');
-        }}> ADD</button>
-        
-      {todo.map((x) => (
-        <div key={x.id} className="todo-list">
-          <p>
-            {x.isComplete && '✅'}
-            {x.task}
-          </p>
-
-         <div>
-         <button
-            className="btn-one"
-            onClick={() => dispatch({ type: actions.COMPLETE, payload: x })}
-          >
-            Complete
-          </button>
-          <button
-             className="btn-two"
-            onClick={() => dispatch({ type: actions.DELETE, payload: x.id })}
-          >
-            Delete
-          </button>
-         </div>
-        </div>
-      ))}
-    </div>
+function App() {
+  return(
+  <div className="App">
+  <h2>Todo-List Assignment</h2>
+  <Provider store={state}>
+    <Todos />
+  </Provider>
+  <h3 style={{ marginTop: "150px" }}>Counter Assignment</h3>
+  <Provider store={store1}>
+    <Counter />
+  </Provider>
+</div>
   );
 }
+
+export default App;
